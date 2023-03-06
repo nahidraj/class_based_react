@@ -1,6 +1,25 @@
 import React from "react";
 import CardNumClass from "./CardNumClass";
+import ImageCards from "./ImageCards";
 import OddOrEvenClass from "./OddOrEvenClass";
+
+const cards = [
+  {
+    img: "/logo512.png",
+    title: "Title 1",
+    des: "Type your description here - 1",
+  },
+  {
+    img: "/logo512.png",
+    title: "Title 2",
+    des: "Type your description here - 2",
+  },
+  {
+    img: "/logo512.png",
+    title: "Title 3",
+    des: "Type your description here - 3",
+  },
+];
 
 class AppClass extends React.Component {
   constructor(props) {
@@ -58,6 +77,9 @@ class AppClass extends React.Component {
             key={index}
             pickedCardParent={this.pickedCardParent}
           />
+        ))}
+        {cards.map((card, index) => (
+          <ImageCards key={index} card={card} />
         ))}
       </>
     );
